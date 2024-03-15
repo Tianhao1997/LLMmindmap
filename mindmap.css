@@ -1,0 +1,16 @@
+.file-button {
+  display: inline-block;
+  padding: 0px 0px;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 2px;
+  border: none;
+}
+
+.file-button img {
+  vertical-align: middle;
+  width: 50px;
+  height:50px;
+  background: transparent;
+}

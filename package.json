@@ -1,0 +1,6 @@
+{
+  "main": "mindmap.js",
+  "dependencies": {
+    "@antv/g6": "latest"
+  }
+}

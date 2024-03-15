@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MindMap for Design</title>
+    <link rel="stylesheet" href="mindmap.css">
+  </head>
+  <body>
+    /* Start Maping */ <br>
+    <!-- upload button -->
+    <label for="fileElem" class="file-button" title="Upload a Mindmap File">
+      <img src="images/upload1.png" alt="Upload" /> 
+    </label>
+    <input type="file" id="fileElem" multiple accept="*" style="display:none">    
+  
+
+
+    <select id="selector">
+      <option value="default">Default mode</option>
+      <option value="addNode">Add Node (by clicking canvas)</option>
+      <option value="addEdge">Add Edge (by clicking two end nodes)</option>
+    </select>
+    <div id="mountNode"></div>
+    
+    <!-- reload button --><br>
+    <button id="reload-btn" class="file-button" title="Clear Mindmap">
+     <img src="images/reloading.png" alt="Reload Mindmap">
+    </button>
+
+    <!-- download button --><br><br><br>
+    <button id="download-btn" class="file-button" title="Download Data">
+      <img src="images/download1.png" alt="Download">
+    </button>
+  
+
+    <script src="https://gw.alipayobjects.com/os/lib/antv/g6/4.3.11/dist/g6.min.js"></script>
+
+    <script src="mindmap.js"></script>
+  </body>
+</html>
