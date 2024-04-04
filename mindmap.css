@@ -14,3 +14,85 @@
   height:50px;
   background: transparent;
 }
+
+#mountNode {
+  background-color: #ffffe0; /* Light yellow */
+}
+
+.css-llm-query, .css-selector, .submit-query-btn{
+  padding: 10px; /* Adds padding inside the elements */
+  border: 1px solid #ccc; /* A light grey border */
+  background-color: #f9f9f9; /* A light background color */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  font-family: Arial, sans-serif; /* Clean, simple font */
+  color: #333; /* Darker text color for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 10px; /* Space between elements */
+}
+
+
+.submit-query-btn {
+  background-color: #007bff; /* A nice blue background */
+  color: white; /* White text color */
+  border: none; /* Remove the default border */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Make the button text bold */
+}
+
+.submit-query-btn:hover {
+  background-color: #022f5e; /* Darker blue on hover for interaction feedback */
+}
+
+/* Additional styling for the .css-llm-query to make it stand out a bit more */
+.css-llm-query {
+  border-color: #007bff; /* A brighter border color */
+  background-color: #e7f3ff; /* A lighter background to contrast with the general style */
+  width: 35%;
+}
+
+/* If you want to add focus styles to enhance usability */
+.css-llm-query:focus, .css-selector:focus {
+  border-color: #0056b3; /* Darker border on focus */
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Add a glow effect */
+}
+
+.css-selector {
+  position: absolute; 
+}
+
+
+.context-menu-button {
+  padding: 8px 15px; /* Adequate padding for clickability and readability */
+  margin: 0px; /* Space between buttons */
+  border: 1px solid #007bff; /* Border color that matches your theme */
+  border-radius: 4px; /* Rounded corners for a modern look */
+  background-color: #ffffff; /* Light background color */
+  color: #007bff; /* Text color that matches the border */
+  text-align: center; /* Center the text inside the button */
+  cursor: pointer; /* Change cursor to indicate clickability */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+  display: block; /* Ensure buttons take the full width of their container */
+  text-decoration: none; /* Remove underline from text */
+  font-size: 14px; /* Suitable font size for readability */
+}
+
+.context-menu-button:hover, .context-menu-button:focus {
+  background-color: #007bff; /* Background color on hover/focus */
+  color: #ffffff; /* Text color on hover/focus */
+  outline: none; /* Remove outline on focus for a cleaner look */
+}
+
+.context-menu-button:active {
+  background-color: #0056b3; /* Slightly darker background color on click */
+  border-color: #004085; /* Slightly darker border color on click */
+}
+
+
+.context-menu-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+
