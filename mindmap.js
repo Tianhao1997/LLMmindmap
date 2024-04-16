@@ -38,7 +38,7 @@ const data_example = JSON.stringify({
 let conversationHistory = [{
   "role": "system",
   "content": 
-  `Only output a JSON depend on the tipic user given and the N number of keywords. The JSON contains N number of nodes whoes "label" are related keywords from the topic and the "label" of edges are relationships. Include unique ID, position, size, shape for nodes; source, target for edges; and styles for both, with edge length, color and width reflecting semantic relevance. Do not put the same IDs for edeges. This is a template: $data_example. Use different node and edge color and edege length to represent relationships. Avoid overllaping. `
+  `Only output a JSON depend on the scenario. The JSON contains 20 number of nodes whoes "label" are related keywords from the topic and the "label" of edges are relationships. Include unique ID, position, size, shape for nodes; source, target for edges; and styles for both, with edge length, color and width reflecting semantic relevance. Do not put the same IDs for edges. Use different node and edge color and edge length to represent relationships. Avoid overlapping. This is a template: $data_example. `
 }];
 
 document.getElementById('submit-query-btn').addEventListener('click', function() {
@@ -293,7 +293,7 @@ getEvents() {
   return {
     'node:click': 'onClick',
     mousemove: 'onMousemove',
-    'edge:click': 'onEdgeClick' // 点击空白处，取消边
+    'edge:click': 'onEdgeClick' 
   };
 },
 onClick(ev) {
@@ -335,7 +335,6 @@ onMousemove(ev) {
 },
 onEdgeClick(ev) {
   const currentEdge = ev.item;
-  // 拖拽过程中，点击会点击到新增的边上
   if (this.addingEdge && this.edge == currentEdge) {
     graph.removeItem(this.edge);
     this.edge = null;
@@ -369,12 +368,9 @@ onClick(ev) {
 });
 
 
-
-// 创建 G6 图实例
 const graph = new G6.Graph({
-container: 'mountNode', // 指定图画布的容器 id，与第 9 行的容器对应
-// 画布宽高
-  width: window.innerWidth, // Set initial width to viewport width
+container: 'mountNode', 
+  width: window.innerWidth / 2, // Set initial width to viewport width
   height: window.innerHeight / 1.3, // Set initial height to viewport height
 modes: {
   default: ['zoom-canvas', 'drag-canvas', 'drag-node'],
@@ -576,7 +572,7 @@ if (text.length < 10) {
   size = [75, 50]; // Wider shape to accommodate longer text
 } else {
   shape = 'rect';
-  size = [100, 50]; // Rectangle for even longer text
+  size = [150, 50]; // Rectangle for even longer text
 }
 
 return { shape, size };
@@ -586,37 +582,44 @@ return { shape, size };
 function onNodeDoubleClick(ev) {
 const node = ev.item;
 const nodeId = node.getID();
-const label = prompt("Enter new label:", node.getModel().label || "");
+const newLabel = prompt("Enter new label:", node.getModel().label || "");
 
-if (label !== null) {
-  const { shape, size } = determineNodeShape(label);
+if (newLabel !== null) {
+  const { shape, size } = determineNodeShape(newLabel);
 
-  // Step 3: Update the Node with New Shape and Label
-  graph.updateItem(node, {
-    label: label,
-    type: shape, // Update node shape
-    size: size // Update node size
-  });
+  const nodes = data.nodes;
+  for (let i = 0; i < nodes.length; i++) {
+    if (nodes[i].id === nodeId) {
+      nodes[i].label = newLabel;
+      nodes[i].type = shape;
+      nodes[i].size = size;
+      break; 
+    }
+  }
 
-  // Refresh the graph to reflect the changes
-  graph.refresh();
+  graph.data(data);
+  graph.render();
 }
 }
 
 function onEdgeDoubleClick(ev) {
 const edge = ev.item;
 const edgeId = edge.getID();
-const label = prompt("Enter new label:", edge.getModel().label || "");
+const newLabel = prompt("Enter new label:", edge.getModel().label || "");
 
-if (label !== null) {
-  graph.updateItem(edge, {
-    label: label,
-  });
+if (newLabel !== null) {
+  // Update the edge label in the data array
+  const edges = data.edges;
+  for (let i = 0; i < edges.length; i++) {
+    if (edges[i].id === edgeId) {
+      edges[i].label = newLabel;
+      break; 
+    }
+  }
   
 
-
-// Refresh the graph to reflect the changes
-graph.refresh();
+  graph.data(data);
+  graph.render();
 }
 }
 
