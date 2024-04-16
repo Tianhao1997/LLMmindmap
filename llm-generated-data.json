@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {"id": "Node1", "x": 50, "y": 50, "size": [60, 60], "shape": "circle", "style": {"fill": "red", "stroke": "darkred", "lineWidth": 2}, "label": "Apple"},
+    {"id": "Node2", "x": 200, "y": 50, "size": [60, 60], "shape": "circle", "style": {"fill": "orange", "stroke": "darkorange", "lineWidth": 2}, "label": "iOS"},
+    {"id": "Node3", "x": 350, "y": 50, "size": [60, 60], "shape": "circle", "style": {"fill": "yellow", "stroke": "gold", "lineWidth": 2}, "label": "App Store"},
+    {"id": "Node4", "x": 500, "y": 50, "size": [60, 60], "shape": "circle", "style": {"fill": "green", "stroke": "darkgreen", "lineWidth": 2}, "label": "Face ID"},
+    {"id": "Node5", "x": 650, "y": 50, "size": [60, 60], "shape": "circle", "style": {"fill": "blue", "stroke": "navy", "lineWidth": 2}, "label": "Siri"},
+    {"id": "Node6", "x": 50, "y": 250, "size": [60, 60], "shape": "circle", "style": {"fill": "purple", "stroke": "indigo", "lineWidth": 2}, "label": "iCloud"},
+    {"id": "Node7", "x": 200, "y": 250, "size": [60, 60], "shape": "circle", "style": {"fill": "pink", "stroke": "deeppink", "lineWidth": 2}, "label": "A-Series Chip"},
+    {"id": "Node8", "x": 350, "y": 250, "size": [60, 60], "shape": "circle", "style": {"fill": "cyan", "stroke": "darkcyan", "lineWidth": 2}, "label": "Retina Display"},
+    {"id": "Node9", "x": 500, "y": 250, "size": [60, 60], "shape": "circle", "style": {"fill": "brown", "stroke": "maroon", "lineWidth": 2}, "label": "Touch ID"},
+    {"id": "Node10", "x": 650, "y": 250, "size": [60, 60], "shape": "circle", "style": {"fill": "grey", "stroke": "darkslategray", "lineWidth": 2}, "label": "Lightning Connector"}
+  ],
+  "edges": [
+    {"source": "Node1", "target": "Node2", "style": {"stroke": "darkorange", "lineWidth": 4}, "label": "operates"},
+    {"source": "Node1", "target": "Node3", "style": {"stroke": "gold", "lineWidth": 3}, "label": "hosts"},
+    {"source": "Node2", "target": "Node4", "style": {"stroke": "darkgreen", "lineWidth": 5}, "label": "supports"},
+    {"source": "Node2", "target": "Node5", "style": {"stroke": "navy", "lineWidth": 3}, "label": "integrates"},
+    {"source": "Node1", "target": "Node6", "style": {"stroke": "indigo", "lineWidth": 2}, "label": "provides"},
+    {"source": "Node1", "target": "Node7", "style": {"stroke": "deeppink", "lineWidth": 4}, "label": "contains"},
+    {"source": "Node1", "target": "Node8", "style": {"stroke": "darkcyan", "lineWidth": 3}, "label": "features"},
+    {"source": "Node2", "target": "Node9", "style": {"stroke": "maroon", "lineWidth": 3}, "label": "supported by"},
+    {"source": "Node1", "target": "Node10", "style": {"stroke": "darkslategray", "lineWidth": 2}, "label": "utilizes"}
+  ]
+}
