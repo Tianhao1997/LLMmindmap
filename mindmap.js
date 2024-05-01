@@ -308,7 +308,7 @@ onClick(ev) {
     graph.updateItem(this.edge, {
       target: model.id
     });
-    // graph.setItemState(this.edge, 'selected', true);
+    graph.setItemState(this.edge, 'selected', true);
     this.edge = null;
     this.addingEdge = false;
   } else {
