@@ -36,7 +36,7 @@ document.getElementById('startBtn').addEventListener('click', function() {
   this.disabled = true;
 
   // Set the time we're counting down to: 5 minutes from now
-  var countDownDate = new Date(new Date().getTime() + 0.25 * 60 * 1000).getTime();
+  var countDownDate = new Date(new Date().getTime() + 10 * 60 * 1000 + 2000).getTime();
 
   // Make sure any previous countdown is cleared
   clearInterval(window.countdownFunction);
