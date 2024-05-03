@@ -82,6 +82,7 @@ body {
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   border-radius: 5px; /* Rounded corners */
   font-weight: bold; /* Make the button text bold */
+  display: none;
 }
 
 .submit-query-btn:hover {
@@ -93,6 +94,7 @@ body {
   border-color: #007bff; /* A brighter border color */
   background-color: #e7f3ff; /* A lighter background to contrast with the general style */
   width: 75%;
+  display: none;
 }
 
 /* If you want to add focus styles to enhance usability */
