@@ -1,5 +1,5 @@
 // For more details on how to use OpenAI's API, see https://platform.openai.com/account/api-keys
-const apiKey = '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';
+const apiKey = '';
 const data_example = JSON.stringify({
   "nodes": [
     {"id": "Node1", "x": 50, "y": 50, "size": [60, 60], "shape": "circle", "style": {"fill": "red", "stroke": "darkred", "lineWidth": 2}, "label": "Apple"},
@@ -221,9 +221,9 @@ const contextMenu = new G6.Menu({
       addNodeManual(this);
     ">Manual Add</button><br>
 
-    <button class="context-menu-button" onclick="
-      autoAddRelatedNode(currentElement.item.getModel().label);
-    ">Auto Add</button><br>
+    //<button class="context-menu-button" onclick="
+    //  autoAddRelatedNode(currentElement.item.getModel().label);
+    //">Auto Add</button><br>
 
     <button onclick='
       deleteNode();
