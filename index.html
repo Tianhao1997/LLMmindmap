@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLM Mindmap</title>
-</head>
-<body>
-  <!-- Replace this placeholder with the content of your existing mindmap.html -->
-  <h1>LLM Mindmap</h1>
-  <p>This is a placeholder index.html. Copy all content from your mindmap.html into here.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MindMap for Design</title>
+    <link rel="stylesheet" href="mindmap.css">
+  </head>
+  <body>
+
+  <!-- Main Flex container for video and mindmap parts -->
+  <div class="main-flex-container">
+
+<!-- Video selection and player -->
+<div id="video-container">
+  <button id="startBtn" style="margin-bottom: 10px;" disabled>Start</button>
+  <div id="countdownTimer" style="text-align:center; font-size:20px; margin-bottom:10px;">Time left: 10:00</div>
+  <input type="file" id="videoInput" accept="video/*" disabled> <!-- Initially disabled -->
+  <label for="videoInput" class="file-button" id="fileInputLabel"></label>
+  <video id="videoPlayer" style="display:none"></video>
+</div>
+
+    <!-- Container for mindmap controls and canvas -->
+    <div class="mindmap-container">
+
+      <!-- Controls: Upload button and Query input -->
+      <div class="controls-section">
+        <label for="fileElem" class="file-button" title="Upload a Mindmap File Here">
+          <img src="images/upload1.png" alt="Upload" /> 
+        </label>
+        <input type="file" id="fileElem" accept=".json" style="display:none">
+        <input type="text" id="llm-query" placeholder="Enter your query here" class="css-llm-query">
+        <button id="submit-query-btn" class="submit-query-btn">Submit Query</button>
+      </div>
+
+      <!-- MountNode and selector -->
+      <div id="mountNode">
+        <select id="selector" class="css-selector">
+          <option value="default">Default mode</option>
+          <option value="addNode">Add Node (by clicking canvas)</option>
+          <option value="addEdge">Add Edge (by clicking two end nodes)</option>
+        </select>
+      </div>
+
+      <!-- reload button -->
+      <button id="reload-btn" class="file-button" title="Clear Mindmap">
+        <img src="images/reloading.png" alt="Reload Mindmap">
+      </button>
+      <!-- download button -->
+      <button id="download-btn" class="file-button" title="Download Data">
+        <img src="images/download1.png" alt="Download">
+      </button>
+
+    </div>
+
+
+  </div>
+
+    
+  
+
+    <script src="https://gw.alipayobjects.com/os/lib/antv/g6/4.3.11/dist/g6.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
+
+    <script src="mindmap.js"></script>
+    <script src="videoPlayer.js"></script>
+
+  </body>
 </html>
