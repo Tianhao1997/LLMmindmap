@@ -221,10 +221,6 @@ const contextMenu = new G6.Menu({
       addNodeManual(this);
     ">Manual Add</button><br>
 
-    //<button class="context-menu-button" onclick="
-    //  autoAddRelatedNode(currentElement.item.getModel().label);
-    //">Auto Add</button><br>
-
     <button onclick='
       deleteNode();
     ' class="context-menu-button">Delete</button><br>
@@ -253,15 +249,11 @@ const contextMenu = new G6.Menu({
     <h3>Canvas Context Menu</h3>
     <button class="manualAddNodeButton context-menu-button" onclick="
       addNodeManual(this);
-    ">Manual Add</button><br>
-
-    <button class="context-menu-button" onclick="
-      console.log('Auto Add clicked');
-    ">Auto Add</button><br>
+    ">Add a node</button><br>
 
     <button onclick='
       deleteNode();
-    ' class="context-menu-button">Delete</button><br>
+    ' class="context-menu-button">Delete this node</button><br>
 
     <label for="color-picker">Node Color:</label>
     <input id="color-picker" onchange="
